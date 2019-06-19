@@ -10,9 +10,7 @@ public class DatingServlet extends HttpServlet {
         // 具体的业务逻辑取决于这个servlet要做什么
         // （写至数据库，完成查询等）
 
-        PrintWriter out = response.getWriter();
-
-        // 构成动态HTML页面
-        out.println("something really ugly goes here");
+        // 把请求转发到一个特定的JSP页面，
+        // 而不是把HTML打印到输出流
     }
 }
