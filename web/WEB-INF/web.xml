@@ -5,12 +5,12 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
            version="4.0">
     <servlet>
-        <servlet-name>Chapter2 Servlet</servlet-name>
-        <servlet-class>Ch2Servlet</servlet-class>
+        <servlet-name>C2dice</servlet-name>
+        <servlet-class>Ch2Dice</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>Chapter2 Servlet</servlet-name>
-        <url-pattern>/Serv2</url-pattern>
+        <servlet-name>C2dice</servlet-name>
+        <url-pattern>/Dice</url-pattern>
     </servlet-mapping>
 </web-app>
