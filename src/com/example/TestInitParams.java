@@ -14,8 +14,8 @@ public class TestInitParams extends HttpServlet {
         while (e.hasMoreElements()) {
             out.println("<br>param name = " + e.nextElement() + "<br>");
         }
-        out.println("main email is " + getServletConfig().getInitParameter("mainEmail"));
+        out.println("main email is " + getServletContext().getInitParameter("mainEmail"));
         out.println("<br>");
-        out.println("admin email is " + getServletConfig().getInitParameter("adminEmail"));
+        out.println("admin email is " + getServletContext().getInitParameter("adminEmail"));
     }
 }
