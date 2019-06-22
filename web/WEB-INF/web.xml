@@ -7,15 +7,12 @@
     <servlet>
         <servlet-name>BeerParamTests</servlet-name>
         <servlet-class>com.example.TestInitParams</servlet-class>
-        <init-param>
-            <param-name>adminEmail</param-name>
-            <param-value>likewecare@wickedlysmart.com</param-value>
-        </init-param>
-        <init-param>
-            <param-name>mainEmail</param-name>
-            <param-value>blooper@wickedlysmart.com</param-value>
-        </init-param>
     </servlet>
+
+    <context-param>
+        <param-name>adminEmail</param-name>
+        <param-value>clientheaderror@wickedlysmart.com</param-value>
+    </context-param>
 
     <servlet-mapping>
         <servlet-name>BeerParamTests</servlet-name>
