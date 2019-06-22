@@ -5,17 +5,23 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
            version="4.0">
     <servlet>
-        <servlet-name>BeerParamTests</servlet-name>
-        <servlet-class>com.example.TestInitParams</servlet-class>
+        <servlet-name>ListenerTester</servlet-name>
+        <servlet-class>com.example.ListenerTester</servlet-class>
     </servlet>
 
     <context-param>
-        <param-name>adminEmail</param-name>
-        <param-value>clientheaderror@wickedlysmart.com</param-value>
+        <param-name>breed</param-name>
+        <param-value>Great Dane</param-value>
     </context-param>
 
     <servlet-mapping>
-        <servlet-name>BeerParamTests</servlet-name>
-        <url-pattern>/Tester.do</url-pattern>
+        <servlet-name>ListenerTester</servlet-name>
+        <url-pattern>/ListenTest.do</url-pattern>
     </servlet-mapping>
+
+    <listener>
+        <listener-class>
+            com.example.MyServletContextListener
+        </listener-class>
+    </listener>
 </web-app>
