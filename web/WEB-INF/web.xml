@@ -5,12 +5,20 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
            version="4.0">
     <servlet>
-        <servlet-name>Ch3 Beer</servlet-name>
-        <servlet-class>com.example.web.BeerSelect</servlet-class>
+        <servlet-name>BeerParamTests</servlet-name>
+        <servlet-class>com.example.TestInitParams</servlet-class>
+        <init-param>
+            <param-name>adminEmail</param-name>
+            <param-value>likewecare@wickedlysmart.com</param-value>
+        </init-param>
+        <init-param>
+            <param-name>mainEmail</param-name>
+            <param-value>blooper@wickedlysmart.com</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>Ch3 Beer</servlet-name>
-        <url-pattern>/SelectBeer.do</url-pattern>
+        <servlet-name>BeerParamTests</servlet-name>
+        <url-pattern>/Tester.do</url-pattern>
     </servlet-mapping>
 </web-app>
