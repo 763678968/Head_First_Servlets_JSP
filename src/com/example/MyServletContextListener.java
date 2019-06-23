@@ -15,7 +15,6 @@ public class MyServletContextListener implements ServletContextListener {
         sc.setAttribute("dog", d);
     }
 
-
     public void contextDestroyed (ServletContextEvent event) {
         // nothing to do here
     }
