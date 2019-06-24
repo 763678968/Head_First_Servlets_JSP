@@ -11,14 +11,15 @@ public class ListenerTester extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        out.println("test context attributes<br>");
+        out.println("test session attributes<br>");
+        HttpSession session = new request.getSession();
 
-        synchronized(getServletContext()) {
+        synchronized(session) {
             getServletContext().setAttribute("foo", "22");
             getServletContext().setAttribute("bar", "42");
 
-            out.println(getServletContext().getAttribute("foo"));
-            out.println(getServletContext().getAttribute("bar"));
+            out.println(session.getAttribute("foo"));
+            out.println(session.getAttribute("bar"));
         }
 
     }
