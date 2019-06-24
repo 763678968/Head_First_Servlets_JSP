@@ -12,12 +12,14 @@ public class ListenerTester extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("test session attributes<br>");
 
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(false);
 
-        if (session.isNew()) {
-            out.println("This is a new session.");
+        if (session==null) {
+            out.println("no session was available");
+            out.println("making one...");
+            session = request.getSession();
         } else {
-            out.println("Welcome back!");
+            out.println("there was a session!");
         }
 
     }
