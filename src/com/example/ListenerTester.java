@@ -12,7 +12,8 @@ public class ListenerTester extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("test session attributes<br>");
 
-        HttpSession session = request.getSession(false);
+        HttpSession session = request.getSession();
+        session.setMaxInactiveInterval(1200);
 
         if (session==null) {
             out.println("no session was available");
