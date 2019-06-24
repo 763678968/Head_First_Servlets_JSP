@@ -6,22 +6,17 @@ import java.io.*;
 
 public class ListenerTester extends HttpServlet {
 
-    public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("test session attributes<br>");
-
         HttpSession session = request.getSession();
-        session.setMaxInactiveInterval(1200);
+        session.setAttribute("foo", "42");
+        session.setAttribute("bar", "420");
+        session.invalidate();
 
-        if (session==null) {
-            out.println("no session was available");
-            out.println("making one...");
-            session = request.getSession();
-        } else {
-            out.println("there was a session!");
-        }
+        String foo = (String)session.getAttribute("foo");
 
+        out.println("Foo: " + foo);
     }
 }
