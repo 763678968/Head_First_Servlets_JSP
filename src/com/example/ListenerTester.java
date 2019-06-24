@@ -13,11 +13,13 @@ public class ListenerTester extends HttpServlet {
 
         out.println("test context attributes<br>");
 
-        getServletContext().setAttribute("foo", "22");
-        getServletContext().setAttribute("bar", "42");
+        synchronized(getServletContext()) {
+            getServletContext().setAttribute("foo", "22");
+            getServletContext().setAttribute("bar", "42");
 
-        out.println(getServletContext().getAttribute("foo"));
-        out.println(getServletContext().getAttribute("bar"));
+            out.println(getServletContext().getAttribute("foo"));
+            out.println(getServletContext().getAttribute("bar"));
+        }
 
     }
 }
