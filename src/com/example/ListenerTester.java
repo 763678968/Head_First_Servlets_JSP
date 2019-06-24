@@ -10,13 +10,17 @@ public class ListenerTester extends HttpServlet {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+
         HttpSession session = request.getSession();
         session.setAttribute("foo", "42");
-        session.setAttribute("bar", "420");
-        session.invalidate();
-
+        session.setMaxInactiveInterval(0);
         String foo = (String)session.getAttribute("foo");
 
+        if (session.isNew()) {
+            out.println("This is a new session.");
+        } else {
+            out.println("Welcome back!");
+        }
         out.println("Foo: " + foo);
     }
 }
