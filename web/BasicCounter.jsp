@@ -11,8 +11,13 @@
     <title>Title</title>
 </head>
 <body>
-<%! int count=0; %>
+<%! int doubleCount() {
+    count = count*2;
+    return count;
+    }
+%>
+<%! int count=1; %>
 The page count is now:
-<%= ++count %>
+<%= doubleCount() %>
 </body>
 </html>
