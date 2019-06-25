@@ -15,6 +15,6 @@
 Test scriptlets...
 <%! int x = 42; %>
 <% int x = 22; %>
-<%= x %>
+<%= this.x %>
 </body>
 </html>
