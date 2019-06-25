@@ -25,7 +25,7 @@
 
     <listener>
         <listener-class>
-            com.example.MyServletContextListener
+            com.example.BeerSessionCounter
         </listener-class>
     </listener>
 </web-app>
