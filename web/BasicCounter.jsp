@@ -11,9 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-<% int count=0; %>
+<%! int count=0; %>
 The page count is now:
 <%= ++count %>
-
 </body>
 </html>
