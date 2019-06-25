@@ -12,9 +12,15 @@
     <title>Title</title>
 </head>
 <body>
-Test scriptlets...
-<%! int x = 42; %>
-<% int x = 22; %>
-<%= this.x %>
+The friends who share your hobby of
+<%= request.getParameter("hobby") %>
+are:<br>
+<% ArrayList al = (ArrayList)request.getAttribute("names"); %>
+<% Iterator it = al.iterator();
+
+while (it.hasNext()) { %>
+    <%= it.next() %>
+<br>
+<% } %>
 </body>
 </html>
