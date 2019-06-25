@@ -6,15 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="foo.*" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
 The page count is:
-<%
-    out.println(foo.Counter.getCount());
-%>
+<%= Counter.getCount()%>;
 
 </body>
 </html>
