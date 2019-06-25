@@ -13,9 +13,8 @@
 </head>
 <body>
 Test scriptlets...
-<% ArrayList list = new ArrayList();
-   list.add(new String("foo"));
-%>
-<%= list.get(0) %>
+<%! int x = 42; %>
+<% int x = 22; %>
+<%= x %>
 </body>
 </html>
