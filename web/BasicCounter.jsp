@@ -6,18 +6,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.*" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-<%! int doubleCount() {
-    count = count*2;
-    return count;
-    }
+Test scriptlets...
+<% ArrayList list = new ArrayList();
+   list.add(new String("foo"));
 %>
-<%! int count=1; %>
-The page count is now:
-<%= doubleCount() %>
+<%= list.get(0) %>
 </body>
 </html>
