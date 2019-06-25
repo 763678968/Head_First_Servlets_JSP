@@ -23,6 +23,7 @@
         <url-pattern>/ListenTest.do</url-pattern>
     </servlet-mapping>
 
+
     <listener>
         <listener-class>
             com.example.BeerSessionCounter
