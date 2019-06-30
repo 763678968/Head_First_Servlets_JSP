@@ -10,10 +10,15 @@
     <uri>simpleTags</uri>
 
     <tag>
-        <description>worst use of a custom tag</description>
-        <name>simple1</name>
-        <tag-class>foo.SimpleTagTest1</tag-class>
-        <body-content>empty</body-content>
+        <description>takes an attribute and iterates over body</description>
+        <name>simple5</name>
+        <tag-class>foo.SimpleTagTest5</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>movieList</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
     </tag>
 
     <!-- Invoke 'Generate' action to add tags or functions -->

@@ -12,6 +12,14 @@
     <title>Title</title>
 </head>
 <body>
+<table>
+    <myTags:simple5 movieList="${movieCollection}">
+        <tr>
+            <td>${movie.name}</td>
+            <td>${movie.genre}</td>
+        </tr>
+    </myTags:simple5>
+</table>
 
 </body>
 </html>
