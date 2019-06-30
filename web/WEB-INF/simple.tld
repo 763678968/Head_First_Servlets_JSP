@@ -13,6 +13,7 @@
         <description>worst use of a custom tag</description>
         <name>simple1</name>
         <tag-class>foo.SimpleTagTest1</tag-class>
+        <body-content>empty</body-content>
     </tag>
 
     <!-- Invoke 'Generate' action to add tags or functions -->
