@@ -1,6 +1,7 @@
 package foo;
 
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.SkipPageException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 import java.util.Iterator;
@@ -9,8 +10,6 @@ import java.util.List;
 
 public class SimpleTagTest5 extends SimpleTagSupport {
 
-
-
     private List movieList;
 
     public void setMovieList(List movieList) {
@@ -18,11 +17,10 @@ public class SimpleTagTest5 extends SimpleTagSupport {
     }
 
     public void doTag() throws JspException, IOException {
-        Iterator i = movieList.iterator();
-        while (i.hasNext()) {
-            Movie movie = (Movie) i.next();
-            getJspContext().setAttribute("movie", movie);
-            getJspBody().invoke(null);
+        getJspContext().getOut().print("Message from within doTag().<br>");
+        getJspContext().getOut().print("About to throw a SkipPageException");
+        if (thingsDontWork) {
+            throw new SkipPageException();
         }
     }
 }
