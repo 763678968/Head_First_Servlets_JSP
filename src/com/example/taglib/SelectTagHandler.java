@@ -16,7 +16,7 @@ import java.util.Map;
  * dynamic attributes mechanism to store all of the
  * pass-through HTML attributes in a hashmap
  */
-public abstract class SelectTagHandler extends SimpleTagSupport implements DynamicAttributes {
+public class SelectTagHandler extends SimpleTagSupport implements DynamicAttributes {
     // 存储'optionsList'属性
 
     public void setOptionsList(List value) {
