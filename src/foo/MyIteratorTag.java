@@ -10,6 +10,9 @@ public class MyIteratorTag extends TagSupport {
     public int doStartTag() throws JspException {
         movieCounter = 0;
 
+        pageContext.setAttribute("movie", movies[movieCounter]);
+        movieCounter++;
+
         return EVAL_BODY_INCLUDE;
     }
 
