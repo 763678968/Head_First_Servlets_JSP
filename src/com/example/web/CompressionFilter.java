@@ -16,15 +16,15 @@ public class CompressionFilter implements Filter {
         ctx.log(cfg.getFilterName() + " initialized.");
     }
 
-    public void doFilter(ServletRequest req, ServeltResponse resp, FilterChain fc) throws IOException, ServletException {
+    public void doFilter(ServletRequest req, ServletResponse resp, FilterChain fc) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
 
-        String valud_encodings = request.getHeader("Accept-Encoding");
-        if (valid_encodings.indexOf("gzip") > -1) {
+        String valid_encodings = request.getHeader("Accept-Encoding");
+        if (valid_encodings.contains("gzip")) {
 
-            CompressionResponseWrapper wrapperedResp = new CompressionResponseWrapper(response);
-            wrappedResp.sestHeader("Content-Encoding", "gzip");
+            CompressionResponseWrapper wrappedResp = new CompressionResponseWrapper(response);
+            wrappedResp.setHeader("Content-Encoding", "gzip");
 
             fc.doFilter(request, wrappedResp);
 

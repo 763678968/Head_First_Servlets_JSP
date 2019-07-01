@@ -3,6 +3,8 @@ package com.example.web;
 // Servlet imports
 import java.util.zip.GZIPOutputStream;
 import javax.servlet.*;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponseWrapper;
 // I/O imports
 import java.io.*;
 import java.util.zip.GZIPOutputStream;
@@ -19,7 +21,7 @@ public class CompressionResponseWrapper extends HttpServletResponseWrapper {
 
     public void setContentLength(int len) { }
 
-    public GZIPOutputStream get GZIPOutputStream() {
+    public GZIPOutputStream getGZIPOutputStream() {
         return this.servletGzipOS.internalGzipOS;
     }
 
@@ -41,7 +43,7 @@ public class CompressionResponseWrapper extends HttpServletResponseWrapper {
     public PrintWriter getWriter() throws IOException {
 
         if ((streamUsed != null) && (streamUsed != servletGzipOs)) {
-            throw new IlegalStateException();
+            throw new IllegalStateException();
         }
 
         if (pw == null) {
