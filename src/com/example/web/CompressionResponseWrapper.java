@@ -11,7 +11,7 @@ import java.util.zip.GZIPOutputStream;
 
 public class CompressionResponseWrapper extends HttpServletResponseWrapper {
 
-    private GZIPOutputStream servletGzipOS = null;
+    private GZIPServletOutputStream servletGzipOS = null;
 
     private PrintWriter pw = null;
 
@@ -34,7 +34,7 @@ public class CompressionResponseWrapper extends HttpServletResponseWrapper {
         }
 
         if (servletGzipOS == null) {
-            servletGzipOs = new GZIPServletOutputStream(getResponse().getOutputStream());
+            servletGzipOS = new GZIPServletOutputStream(getResponse().getOutputStream());
             streamUsed = servletGzipOS;
         }
         return servletGzipOS;
@@ -42,12 +42,12 @@ public class CompressionResponseWrapper extends HttpServletResponseWrapper {
 
     public PrintWriter getWriter() throws IOException {
 
-        if ((streamUsed != null) && (streamUsed != servletGzipOs)) {
+        if ((streamUsed != null) && (streamUsed != servletGzipOS)) {
             throw new IllegalStateException();
         }
 
         if (pw == null) {
-            servletGzipOS = new GZIPOutputStream(getResponse().getOutputStream());
+            servletGzipOS = new GZIPServletOutputStream(getResponse().getOutputStream());
 
             OutputStreamWriter osw = new OutputStreamWriter(servletGzipOS, getResponse().getCharacterEncoding());
 
