@@ -19,6 +19,8 @@
             // 将用户名加入到Cookie中
             Cookie cookie = new Cookie("name", name);
 
+            cookie.setMaxAge(10);
+
             response.addCookie(cookie);
 
             response.sendRedirect("A.jsp");
