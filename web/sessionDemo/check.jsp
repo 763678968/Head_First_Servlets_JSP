@@ -19,6 +19,8 @@
                 // 只有登录成功，session中才会存在uname/upwd
                 session.setAttribute("uname", name);
                 session.setAttribute("upwd", pwd);
+                session.setMaxInactiveInterval(10);
+
                 request.getRequestDispatcher("welcome.jsp").forward(request, response);
             } else {
                 // 登录失败
