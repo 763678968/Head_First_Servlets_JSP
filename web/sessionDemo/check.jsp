@@ -19,7 +19,13 @@
                 // 只有登录成功，session中才会存在uname/upwd
                 session.setAttribute("uname", name);
                 session.setAttribute("upwd", pwd);
-                session.setMaxInactiveInterval(10);
+                System.out.println("sessionId" + session.getId());
+
+                // Cookie cookie = new Cookie("uname", name)
+                // response.addCookie(cookie);
+                // 服务端在第一次响应客户端时，会发送一个JSESSIONID的cookie
+
+                // session.setMaxInactiveInterval(10);
 
                 request.getRequestDispatcher("welcome.jsp").forward(request, response);
             } else {
