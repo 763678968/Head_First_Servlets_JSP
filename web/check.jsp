@@ -7,6 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.LoginDao" %>
+<%@ page import="com.entity.*" %>
+<%@ page import="com.Login" %>
 <html>
 <head>
     <title>Title</title>
@@ -15,8 +17,10 @@
 <%
     String name = request.getParameter("uname");
     String pwd = request.getParameter("upwd");
+    Login login = new Login(name, pwd);
+    
     LoginDao dao = new LoginDao();
-    int result = dao.login(name, pwd);
+    int result = dao.login(login);
     if (result > 0) {
         out.print("登录成功！");
     } else if (result == 0) {

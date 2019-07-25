@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class LoginDao {
 
-    public int login(String name, String pwd) { // 1：登录成功 0：登录失败（用户名或密码有误） -1：系统异常
+    public int login(Login login) { // 1：登录成功 0：登录失败（用户名或密码有误） -1：系统异常
         String URL = "jdbc:mysql://localhost:3306/student";
         String USERNAME = "root";
         String PWD = "12241122---qrx";
@@ -23,7 +23,7 @@ public class LoginDao {
 //            String name = request.getParameter("uname");
 //            String pwd = request.getParameter("upwd");
 
-            String sql = "select count(*) from login where uname = '"+name+"' and upwd = '"+pwd+"'";
+            String sql = "select count(*) from login where uname = '"+ login.getName()+"' and upwd = '"+login.getPwd()+"'";
 
             // 执行SQL(增删改executeUpdate()，查询executeQuery())
             rs = stmt.executeQuery(sql); // 返回值表示增删改几条数据
