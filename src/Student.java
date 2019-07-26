@@ -50,4 +50,8 @@ public class Student {
     public void setSaddress(String saddress) {
         this.saddress = saddress;
     }
+
+    public String toString() {
+        return this.getSno() + "-" + this.getSname() + "-" + this.getSage() + "-" + this.getSaddress();
+    }
 }
