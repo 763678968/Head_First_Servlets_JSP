@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.LoginDao" %>
+<%@ page import="com.LoginDao_" %>
 <%@ page import="com.entity.*" %>
 <%@ page import="com.Login" %>
 <html>
@@ -19,7 +19,7 @@
     String pwd = request.getParameter("upwd");
     Login login = new Login(name, pwd);
     
-    LoginDao dao = new LoginDao();
+    LoginDao_ dao = new LoginDao_();
     int result = dao.login(login);
     if (result > 0) {
         out.print("登录成功！");
