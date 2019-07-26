@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.LoginDao_" %>
 <%@ page import="com.entity.*" %>
-<%@ page import="com.Login" %>
+<%@ page import="com.Login_" %>
 <html>
 <head>
     <title>Title</title>
@@ -17,7 +17,7 @@
 <%
     String name = request.getParameter("uname");
     String pwd = request.getParameter("upwd");
-    Login login = new Login(name, pwd);
+    Login_ login = new Login_(name, pwd);
     
     LoginDao_ dao = new LoginDao_();
     int result = dao.login(login);

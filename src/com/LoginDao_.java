@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class LoginDao_ {
 
-    public int login(Login login) { // 1：登录成功 0：登录失败（用户名或密码有误） -1：系统异常
+    public int login(Login_ login) { // 1：登录成功 0：登录失败（用户名或密码有误） -1：系统异常
         String URL = "jdbc:mysql://localhost:3306/student";
         String USERNAME = "root";
         String PWD = "12241122---qrx";

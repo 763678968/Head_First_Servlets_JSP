@@ -2,36 +2,43 @@ package com;
 
 public class Login {
     private int id;
-    private String name;
-    private String pwd;
+    private String uname;
+    private String upwd;
 
     public Login() {    }
 
-    public Login(int id, String name, String pwd) {
+    public Login(String uname, String upwd) {
+        this.uname = uname;
+        this.upwd = upwd;
+    }
+
+    public Login(int id, String uname, String upwd) {
         this.id = id;
-        this.name = name;
-        this.pwd = pwd;
+        this.uname = uname;
+        this.upwd = upwd;
     }
-    public Login(String name, String pwd) {
-        this.name = name;
-        this.pwd = pwd;
-    }
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
-    public String getName() {
-        return name;
+
+    public String getUname() {
+        return uname;
     }
-    public void setName(String name) {
-        this.name = name;
+
+    public void setUname(String uname) {
+        this.uname = uname;
     }
-    public String getPwd() {
-        return pwd;
+
+    public String getUpwd() {
+        return upwd;
     }
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+
+    public void setUpwd(String upwd) {
+        this.upwd = upwd;
     }
 }
