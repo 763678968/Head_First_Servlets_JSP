@@ -1,4 +1,6 @@
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 // 数据访问层：原子性的增删改查
 public class StudentDao {
@@ -117,6 +119,50 @@ public class StudentDao {
             return false;
         } finally {
             try {
+                if (pstmt != null) pstmt.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    // 查询全部学生（很多学生）
+    public List<Student> queryAllStudents() {
+        List<Student> students = new ArrayList<>();
+        Student student = null;
+        Connection connection = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            String sql = "select * from student";
+            pstmt = connection.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                int no = rs.getInt("sno");
+                String name = rs.getString("sname");
+                int age = rs.getInt("sage");
+                String address = rs.getString("saddress");
+                student = new Student(no, name, age, address);
+                students.add(student);
+            }
+            return students;
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } catch(Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            try {
+                if (rs != null) rs.close();
                 if (pstmt != null) pstmt.close();
                 if (connection != null) connection.close();
             } catch (SQLException e) {
