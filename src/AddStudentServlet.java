@@ -28,10 +28,11 @@ public class AddStudentServlet extends HttpServlet {
          * session: request.getSession();
          * application: request.getServletContext()
          */
+        // 设置响应编码
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("utf-8");
         PrintWriter out = response.getWriter(); // 响应对象
-        // 设置响应编码
+
         if (result) {
             out.println("增加成功！");
         } else {

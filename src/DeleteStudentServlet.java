@@ -18,6 +18,8 @@ public class DeleteStudentServlet extends HttpServlet {
 
         StudentService service = new StudentService();
         boolean result = service.deleteStudentBySno(no);
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("utf-8");
         if (result) {
             // out.print()
             response.getWriter().println("删除成功！");
