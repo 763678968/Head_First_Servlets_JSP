@@ -5,7 +5,7 @@
          version="4.0">
 
 <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>com.QueryAllStudentsServlet</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>login.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
@@ -14,11 +14,11 @@
 
     <servlet>
         <servlet-name>AddStudentServlet</servlet-name>
-        <servlet-class>AddStudentServlet</servlet-class>
+        <servlet-class>com.AddStudentServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>AddStudentServlet</servlet-name>
-        <url-pattern>/AddStudentServlet</url-pattern>
+        <url-pattern>/com.AddStudentServlet</url-pattern>
     </servlet-mapping>
 </web-app>
