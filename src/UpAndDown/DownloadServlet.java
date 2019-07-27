@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 public class DownloadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,7 +23,7 @@ public class DownloadServlet extends HttpServlet {
 
         // 下载文件：需要设置消息头
         response.addHeader("content-Type", "application/octet-stream");
-        response.addHeader("content-Disposition", "attachment; filename=" + fileName);
+        response.addHeader("content-Disposition", "attachment; filename=" + URLEncoder.encode(fileName, StandardCharsets.UTF_8));
 
         // Servlet通过文件的地址，将文件转为输入流读到Servlet中
         InputStream in = getServletContext().getResourceAsStream("/res/无标题.png");
