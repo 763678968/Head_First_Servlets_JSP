@@ -17,5 +17,7 @@
             上传照片：<input type="file" name="spicture"/><br/>
             <input type="submit" value="注册"/>
         </form>
+        <a href="UpAndDown.DownloadServlet?filename=无标题.png">无标题</a>
+
 </body>
 </html>
