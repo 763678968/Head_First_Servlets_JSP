@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Title</title>
-</head>
+</head>K
 <body>
         <form action="UpAndDown.UploadServlet" method="post" enctype="multipart/form-data">
             学号：<input name="sno"/><br/>
