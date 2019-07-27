@@ -17,8 +17,18 @@
         <servlet-class>UpAndDown.UploadServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>DownloadServlet</servlet-name>
+        <servlet-class>UpAndDown.DownloadServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>UploadServlet</servlet-name>
         <url-pattern>/UpAndDown.UploadServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DownloadServlet</servlet-name>
+        <url-pattern>/UpAndDown.DownloadServlet</url-pattern>
     </servlet-mapping>
 </web-app>
