@@ -22,8 +22,17 @@ public class DownloadServlet extends HttpServlet {
         String fileName = request.getParameter("filename"); // from a href Servlet?a=b
 
         // 下载文件：需要设置消息头
-        response.addHeader("content-Type", "application/octet-stream");
-        response.addHeader("content-Disposition", "attachment; filename=" + URLEncoder.encode(fileName, StandardCharsets.UTF_8));
+        // 对于不同浏览器，进行不同的处理
+        // 获取客户端的user-agent信息
+        String agent = request.getHeader("User-Agent");
+
+        if (agent.toLowerCase().indexOf("firefox") != -1) {
+            // Firefox下载 文件名乱码问题
+            // response.addHeader(....);
+        } else {
+            // Edge下载 文件名乱码问题
+            response.addHeader("content-Disposition", "attachment; filename=" + URLEncoder.encode(fileName, StandardCharsets.UTF_8));
+        }
 
         // Servlet通过文件的地址，将文件转为输入流读到Servlet中
         InputStream in = getServletContext().getResourceAsStream("/res/无标题.png");
