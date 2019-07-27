@@ -13,12 +13,12 @@
 </welcome-file-list>
 
     <servlet>
-        <servlet-name>AddStudentServlet</servlet-name>
-        <servlet-class>com.AddStudentServlet</servlet-class>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>UpAndDown.UploadServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>AddStudentServlet</servlet-name>
-        <url-pattern>/com.AddStudentServlet</url-pattern>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/UpAndDown.UploadServlet</url-pattern>
     </servlet-mapping>
 </web-app>
