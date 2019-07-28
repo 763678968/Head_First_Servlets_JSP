@@ -17,6 +17,7 @@ public class MyFilter implements Filter { // 过滤器
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         System.out.println("拦截请求...");
+        chain.doFilter(request, response); // 放行
         System.out.println("拦截响应...");
     }
 }
