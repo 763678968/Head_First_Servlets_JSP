@@ -5,7 +5,6 @@
          version="4.0">
 
 <welcome-file-list>
-    <welcome-file>com.QueryAllStudentsServlet</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>login.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
@@ -13,22 +12,24 @@
 </welcome-file-list>
 
     <servlet>
-        <servlet-name>UploadServlet</servlet-name>
-        <servlet-class>UpAndDown.UploadServlet</servlet-class>
-    </servlet>
-
-    <servlet>
-        <servlet-name>DownloadServlet</servlet-name>
-        <servlet-class>UpAndDown.DownloadServlet</servlet-class>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>MyServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>UploadServlet</servlet-name>
-        <url-pattern>/UpAndDown.UploadServlet</url-pattern>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/MyServlet</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>DownloadServlet</servlet-name>
-        <url-pattern>/UpAndDown.DownloadServlet</url-pattern>
-    </servlet-mapping>
+    <!-- 配置过滤器 -->
+    <filter>
+        <filter-name>MyServlet</filter-name>
+        <filter-class>MyFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>MyServlet</filter-name>
+        <url-pattern>/MyServlet</url-pattern>
+    </filter-mapping>
+
 </web-app>
