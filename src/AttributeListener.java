@@ -26,7 +26,6 @@ public class AttributeListener implements ServletRequestAttributeListener, HttpS
         String attrName = scae.getName();
         Object attrValue = scae.getServletContext().getAttribute(attrName);
         System.out.println("ServletContext【替换】属性：" + attrName + "，属性值：" + attrValue);
-
     }
 
     @Override
