@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-        <a href="MyServlet">MyServlet</a>
+hello
+<a href="TestServlet">TestServlet</a>
 </body>
 </html>
